@@ -39,6 +39,7 @@ export default class ModalDropdown extends Component {
     keyboardShouldPersistTaps: PropTypes.string,
     showSearch: PropTypes.bool,
     keySearchObject: PropTypes.string,
+    placeHolder: PropTypes.string,
     renderSearch: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.object,
@@ -123,7 +124,8 @@ export default class ModalDropdown extends Component {
     renderRowComponent: Platform.OS === 'ios' ? TouchableOpacity : TouchableHighlight,
     renderButtonComponent: TouchableOpacity,
     renderRightComponent: View,
-    numberOfLines: 1
+    numberOfLines: 1,
+    placeHolder: 'Select Option'
   };
 
   constructor(props) {
@@ -243,6 +245,7 @@ export default class ModalDropdown extends Component {
       renderRightComponent,
       buttonAndRightComponentContainerStyle,
       numberOfLines,
+      placeHolder,
     } = this.props;
     const ButtonTouchable = renderButtonComponent;
     const RightComponent = renderRightComponent;
@@ -259,7 +262,7 @@ export default class ModalDropdown extends Component {
         {children || (
           <View style={[styles.button, buttonAndRightComponentContainerStyle]}>
             <Text style={[styles.buttonText, buttonTextStyle]} numberOfLines={numberOfLines}>
-              {buttonText}
+              {buttonText || placeHolder}
             </Text>
             <RightComponent />
           </View>
