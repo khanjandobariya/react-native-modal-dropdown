@@ -439,7 +439,7 @@ export default class ModalDropdown extends Component {
         ref={component => (this.flatList = component)}
         scrollEnabled={scrollEnabled}
         initialScrollIndex={saveScrollPosition ? selectedIndex : -1}
-        style={[styles.list, listStyleProps}]
+        style={[styles.list, listStyleProps]}
         keyExtractor={(item, i) => (`key-${i}`)}
         renderItem={this._renderItem}
         ItemSeparatorComponent={renderSeparator || this._renderSeparator}
