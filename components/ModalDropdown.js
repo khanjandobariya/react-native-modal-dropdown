@@ -567,7 +567,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     fontSize: 11,
     color: 'gray',
-    backgroundColor: 'white',
     textAlignVertical: 'center',
   },
   highlightedRowText: {
